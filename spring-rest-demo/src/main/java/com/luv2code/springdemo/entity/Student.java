@@ -1,4 +1,4 @@
-package com.luvtocode.springdemo.entity;
+package com.luv2code.springdemo.entity;
 
 public class Student {
 
