@@ -10,35 +10,33 @@
 	rel="stylesheet"
 	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 	crossorigin="anonymous">
-
-<title>Employee Directory</title>
+<title>Save Employee</title>
 </head>
 <body>
+
 	<div class="container">
+
 		<h3>Employee Directory</h3>
 		<hr>
-		<!-- Add Amployee button -->
-		<a th:href="@{/employees/showFormForAdd}"
-			class="btn btn-primary btn-sm mb-3">Add Employee</a>
-		<table class="table table-striped table-hover table-bordered">
-			<thead class="table-dark">
-				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
-				</tr>
-			</thead>
+		<p class="h4 mb-4">Save Employee</p>
 
-			<tbody>
-				<tr th:each="tempEmployee : ${employees}">
-					<td th:text="${tempEmployee.firstName}" />
-					<td th:text="${tempEmployee.lastName}" />
-					<td th:text="${tempEmployee.email}" />
-				</tr>
-			</tbody>
-		</table>
+		<form action="#" th:action="@{/employees/save}"
+			th:object="${employee}" method="POST">
+
+			<input type="text" th:field="*{firstName}"
+				class="form-control mb-4 col-4" placeholder="First name" /> 
+				
+			<input type="text" th:field="*{lastName}" class="form-control mb-4 col-4"
+				placeholder="Last name" /> 
+				
+			<input type="text" th:field="*{email}"
+				class="form-control mb-4 col-4" placeholder="Email" />
+
+			<button type="submit" class="btn btn-info col-2">Save</button>
+
+		</form>
+
 	</div>
-
 
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
