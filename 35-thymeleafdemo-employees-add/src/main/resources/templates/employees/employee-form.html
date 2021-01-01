@@ -32,9 +32,12 @@
 			<input type="text" th:field="*{email}"
 				class="form-control mb-4 col-4" placeholder="Email" />
 
-			<button type="submit" class="btn btn-info col-2">Save</button>
+			<button type="submit" class="btn btn-success col-2">Save</button>
 
 		</form>
+		
+		<hr>
+		<a th:href="@{/employees/list}">Back to Employee List</a>
 
 	</div>
 
